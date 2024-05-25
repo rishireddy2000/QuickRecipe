@@ -1,10 +1,3 @@
-//
-//  ImagePicker.swift
-//  MixnMatch
-//
-//  Created by Prudhvi Puli on 05/03/24.
-//
-
 import Foundation
 import SwiftUI
 

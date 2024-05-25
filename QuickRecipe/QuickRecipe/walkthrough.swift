@@ -1,10 +1,3 @@
-//
-//  walkthrough.swift
-//  MixnMatch
-//
-//  Created by Rishi Saimshu Reddy Bandi on 3/7/24.
-//
-
 import SwiftUI
 import WebKit
 

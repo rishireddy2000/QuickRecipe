@@ -1,10 +1,3 @@
-//
-//  WeatherModel.swift
-//  MixnMatch
-//
-//  Created by Prudhvi Puli on 06/03/24.
-//
-
 import Foundation
 
 struct WeatherData: Codable {
