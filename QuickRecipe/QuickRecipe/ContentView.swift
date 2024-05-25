@@ -67,189 +67,143 @@ struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        NavigationView {
-            VStack {
-                Text("Your Kitchen").font(.largeTitle).foregroundColor(Color.white).padding()
-                
-                    .onAppear(perform: {
-                        let launchCount = updateLaunchCount()
-                        if launchCount == 3 {
-                            showingRatePrompt = true
-                        }
-                    })
-                    .alert(isPresented: $showingRatePrompt) {
-                        Alert(
-                            title: Text("Enjoying the App?"),
-                            message: Text("Rate us in the App Store!"),
-                            primaryButton: .default(Text("Rate Now"), action: openAppStoreForRating),
-                            secondaryButton: .cancel()
-                        )
-                    }
-                HStack {
-                    Button("Perishable") { selectedType = .Perishables }
-                        .padding().background(selectedType == .Perishables ? Color.white.opacity(0.2) : Color.clear).cornerRadius(10).foregroundColor(.white)
-                    
-                    Button("Sauces") { selectedType = .Sauces }
-                        .padding().background(selectedType == .Sauces ? Color.white.opacity(0.2) : Color.clear).cornerRadius(10).foregroundColor(.white)
-                }.padding()
-                
-                ScrollView {
-                    VStack {
-                        if selectedType == .Perishables {
-                            ForEach(FoodItemSubtype.subtypes(for: .Perishables), id: \.self) { subtype in
-                                let itemsCount = foodItems.filter { $0.type == .Perishables && $0.subtype == subtype }.count
-                                VStack(alignment: .leading) {
-                                    Text("\(subtype.rawValue) (\(itemsCount))")
-                                        .font(.headline)
-                                        .padding(.leading)
-                                    
-                                    ScrollView(.horizontal, showsIndicators: false) {
-                                        HStack(spacing: 10) {
-                                            ForEach(foodItems.filter { $0.type == .Perishables && $0.subtype == subtype }.reversed(), id: \.id) { item in
-                                                VStack {
-                                                    if let uiImage = loadImage(named: item.imageName) {
-                                                        Image(uiImage: uiImage)
-                                                            .resizable()
-                                                            .scaledToFit()
-                                                            .frame(width: 150, height: 150)
-                                                            .clipped()
-                                                    } else {
-                                                        Image(systemName: "photo")
-                                                            .resizable()
-                                                            .scaledToFit()
-                                                            .frame(width: 200, height: 200)
-                                                    }
-                                                    Text(item.name)
-                                                        .frame(width: 200)
-                                                        .multilineTextAlignment(.center)
-                                                }
-                                                .frame(width: 200, height: 250)
-                                                .cornerRadius(10)
-                                                .onTapGesture {
-                                                    self.selectedFoodItem = item
-                                                    self.isEditMode = true
-                                                    self.navigateToItemDetailView = true
-                                                    print("Selected Food Item ImageName: \(selectedFoodItem?.imageName ?? "No Image Name")")
-                                                }
-                                            }
-                                        }
-                                    }
-                                    .frame(height: 250)
-                                }
-                            }
-                        }
-                        
-                        if selectedType == .Sauces {
-                            ForEach(FoodItemSubtype.subtypes(for: .Sauces), id: \.self) { subtype in
-                                let itemsCount = foodItems.filter { $0.type == .Sauces && $0.subtype == subtype }.count
-                                VStack(alignment: .leading) {
-                                    Text("\(subtype.rawValue) (\(itemsCount))")
-                                        .font(.headline)
-                                        .padding(.leading)
-                                    
-                                    ScrollView(.horizontal, showsIndicators: false) {
-                                        HStack(spacing: 10) {
-                                            ForEach(foodItems.filter { $0.type == .Sauces && $0.subtype == subtype }.reversed(), id: \.id) { item in
-                                                VStack {
-                                                    if let uiImage = loadImage(named: item.imageName) {
-                                                        Image(uiImage: uiImage)
-                                                            .resizable()
-                                                            .scaledToFit()
-                                                            .frame(width: 200, height: 200)
-                                                            .clipped()
-                                                    } else {
-                                                        Image(systemName: "photo")
-                                                            .resizable()
-                                                            .scaledToFit()
-                                                            .frame(width: 200, height: 200)
-                                                    }
-                                                    Text(item.name)
-                                                        .frame(width: 200)
-                                                        .multilineTextAlignment(.center)
-                                                }
-                                                .frame(width: 200, height: 250)
-                                                .cornerRadius(10)
-                                                .onTapGesture {
-                                                    self.selectedFoodItem = item
-                                                    self.isEditMode = true
-                                                    self.navigateToItemDetailView = true
-                                                }
-                                            }
-                                        }
-                                    }
-                                    .frame(height: 250)
-                                }
-                            }
-                        }
-                    }
+        VStack{
+            Text("Your Kitchen").font(.largeTitle).foregroundColor(Color.white).padding()
+        
+            .onAppear(perform: {
+                let launchCount = updateLaunchCount()
+                if launchCount == 3 {
+                    showingRatePrompt = true
                 }
-                
-                HStack {
-                    Spacer()
-                    Button(action: { self.showActionSheet = true }) { Image(systemName: "plus.circle.fill") }
-                        .actionSheet(isPresented: $showActionSheet) {
-                            ActionSheet(title: Text("Select Photo"), message: Text("Choose"), buttons: [
-                                .default(Text("Photo Library")) {
-                                    self.showImagePicker = true
-                                    self.sourceType = .photoLibrary
-                                },
-                                .default(Text("Camera")) {
-                                    self.showImagePicker = true
-                                    self.sourceType = .camera
-                                },
-                                .cancel()
-                            ])
-                        }
-                        .sheet(isPresented: $showImagePicker) {
-                            ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
-                        }
-                        .onChange(of: image) { newImage in
-                            if let newImage = newImage {
-                                self.handlePickedImage(newImage)
-                            }
-                        }
-                    Spacer()
-                }
-                
-                NavigationLink(
-                    destination: ImageDetailsView(
-                        isEditing: selectedFoodItem != nil,
-                        editingImageName: selectedFoodItem?.imageName,
-                        editingItemIndex: selectedFoodItem != nil ? foodItems.firstIndex(where: { $0.id == selectedFoodItem!.id }) : nil,
-                        foodItems: $foodItems,
-                        onSave: { updatedItems in
-                            self.foodItems = updatedItems
-                            self.saveFoodItems(updatedItems)
-                        }
-                    ),
-                    isActive: $navigateToItemDetailView
-                ) {
-                    EmptyView()
-                }
+            })
+            .alert(isPresented: $showingRatePrompt) {
+                Alert(
+                    title: Text("Enjoying the App?"),
+                    message: Text("Rate us in the App Store!"),
+                    primaryButton: .default(Text("Rate Now"), action: openAppStoreForRating),
+                    secondaryButton: .cancel()
+                )
             }
-            .onAppear {
-                self.foodItems = loadFoodItems()
-                if let storedDate = UserDefaults.standard.object(forKey: "InitialLaunch") as? Date {
-                    self.initialLaunchDate = storedDate
-                } else {
-                    let currentDate = Date()
-                    UserDefaults.standard.set(currentDate, forKey: "InitialLaunch")
-                    self.initialLaunchDate = currentDate
-                }
-                
-                if let launchDate = self.initialLaunchDate {
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateStyle = .short
-                    dateFormatter.timeStyle = .none
-                    let dateString = dateFormatter.string(from: launchDate)
-                    print("Initial Launch Date: \(dateString)")
-                } else {
-                    print("Initial Launch Date not found.")
-                }
+           TabView(selection: $selectedType) {
+               ForEach(FoodItemType.allCases, id: \.self) { type in
+                   foodItemList(for: type)
+                       .tabItem {
+                           Text(type.rawValue)
+                       }
+                       .tag(type)
+               }
+           }
+            HStack {
+                Spacer()
+                Button(action: { self.showActionSheet = true }) { Image(systemName: "plus.circle.fill") }
+                    .actionSheet(isPresented: $showActionSheet) {
+                        ActionSheet(title: Text("Select Photo"), message: Text("Choose"), buttons: [
+                            .default(Text("Photo Library")) {
+                                self.showImagePicker = true
+                                self.sourceType = .photoLibrary
+                            },
+                            .default(Text("Camera")) {
+                                self.showImagePicker = true
+                                self.sourceType = .camera
+                            },
+                            .cancel()
+                        ])
+                    }
+                    .sheet(isPresented: $showImagePicker) {
+                        ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
+                    }
+                    .onChange(of: image) { newImage in
+                        if let newImage = newImage {
+                            self.handlePickedImage(newImage)
+                        }
+                    }
+                Spacer()
+            }
+            NavigationLink(
+                destination: ImageDetailsView(
+                    isEditing: selectedFoodItem != nil,
+                    editingImageName: selectedFoodItem?.imageName,
+                    editingItemIndex: selectedFoodItem != nil ? foodItems.firstIndex(where: { $0.id == selectedFoodItem!.id }) : nil,
+                    foodItems: $foodItems,
+                    onSave: { updatedItems in
+                        self.foodItems = updatedItems
+                        self.saveFoodItems(updatedItems)
+                    }
+                ),
+                isActive: $navigateToItemDetailView
+            ) {
+                EmptyView()
             }
         }
-        
+        .onAppear {
+            self.foodItems = loadFoodItems()
+            if let storedDate = UserDefaults.standard.object(forKey: "InitialLaunch") as? Date {
+                self.initialLaunchDate = storedDate
+            } else {
+                let currentDate = Date()
+                UserDefaults.standard.set(currentDate, forKey: "InitialLaunch")
+                self.initialLaunchDate = currentDate
+            }
+            
+            if let launchDate = self.initialLaunchDate {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = .short
+                dateFormatter.timeStyle = .none
+                let dateString = dateFormatter.string(from: launchDate)
+                print("Initial Launch Date: \(dateString)")
+            } else {
+                print("Initial Launch Date not found.")
+            }
+        }
     }
+   
+   private func foodItemList(for type: FoodItemType) -> some View {
+       VStack {
+           Text("Items for \(type.rawValue)")
+           ForEach(FoodItemSubtype.subtypes(for: type), id: \.self) { subtype in
+               let itemsCount = foodItems.filter { $0.type == type && $0.subtype == subtype }.count
+               VStack(alignment: .leading) {
+                   Text("\(subtype.rawValue) (\(itemsCount))")
+                       .font(.headline)
+                       .padding(.leading)
+                   
+                   ScrollView(.horizontal, showsIndicators: false) {
+                       HStack(spacing: 10) {
+                           ForEach(foodItems.filter { $0.type == type && $0.subtype == subtype }.reversed(), id: \.id) { item in
+                               VStack {
+                                   if let uiImage = loadImage(named: item.imageName) {
+                                       Image(uiImage: uiImage)
+                                           .resizable()
+                                           .scaledToFit()
+                                           .frame(width: 150, height: 150)
+                                           .clipped()
+                                   } else {
+                                       Image(systemName: "photo")
+                                           .resizable()
+                                           .scaledToFit()
+                                           .frame(width: 200, height: 200)
+                                   }
+                                   Text(item.name)
+                                       .frame(width: 200)
+                                       .multilineTextAlignment(.center)
+                               }
+                               .frame(width: 200, height: 250)
+                               .cornerRadius(10)
+                               .onTapGesture {
+                                   self.selectedFoodItem = item
+                                   self.isEditMode = true
+                                   self.navigateToItemDetailView = true
+                                   print("Selected Food Item ImageName: \(selectedFoodItem?.imageName ?? "No Image Name")")
+                               }
+                           }
+                       }
+                   }
+                   .frame(height: 250)
+               }
+           }
+       }
+   }
+
     
     private func saveImage(_ imageData: Data, withName name: String) {
         guard let directory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else { return }
