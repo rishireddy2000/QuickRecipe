@@ -51,6 +51,8 @@ enum FoodItemSubtype: String, CaseIterable, Codable {
 
 
 struct ContentView: View {
+    @State private var showRecipeSearch = false
+    @State private var showShoppingList = false
     @State private var selectedType: FoodItemType = .Perishables
     @State private var showActionSheet = false
     @State private var showImagePicker: Bool = false
@@ -90,9 +92,16 @@ struct ContentView: View {
                 HStack {
                     Spacer()
                     
-                    NavigationLink(destination: RecipeSearchView(ingredients: ["Apple","Sugar"])) { Image(systemName: "fork.knife.circle.fill ").resizable()
-                            .frame(width: 50, height: 50) // Adjusted size
-                            .foregroundColor(.blue) }
+                    Button(action: { self.showRecipeSearch.toggle() }) {
+                                        Image(systemName: "fork.knife.circle.fill")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                            .foregroundColor(.blue)
+                                    }
+                                    .sheet(isPresented: $showRecipeSearch) {
+                                        RecipeSearchView(ingredients: ["Apple", "Sugar"])
+                                    }
+                                    .transition(.slide)
                     
                     Spacer()
                     
@@ -123,10 +132,17 @@ struct ContentView: View {
                         }
                     Spacer()
                     
-                    NavigationLink(destination: ShoppingListView()) { Image(systemName: "bag.fill").resizable()
-                            .frame(width: 50, height: 50) // Adjusted size
-                            .foregroundColor(.blue) }
-                    
+                    Button(action: { self.showShoppingList.toggle() }) {
+                                        Image(systemName: "bag.fill")
+                                            .resizable()
+                                            .frame(width: 50, height: 50)
+                                            .foregroundColor(.blue)
+                                    }
+                                    .sheet(isPresented: $showShoppingList) {
+                                        ShoppingListView()
+                                    }
+                                    .transition(.slide)
+
                     Spacer()
                     
                 }
@@ -319,4 +335,8 @@ struct ContentView: View {
         }
         navigateToItemDetailView = true
     }
+}
+
+#Preview {
+    ContentView()
 }
