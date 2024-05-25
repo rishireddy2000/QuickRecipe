@@ -104,11 +104,10 @@ struct ContentView: View {
                                     .transition(.slide)
                     
                     Spacer()
-                    
-                    Button(action: { self.showActionSheet = true }) { Image(systemName: "plus.circle.fill").resizable()
-                            .frame(width: 50, height: 50) // Adjusted size
-                            .foregroundColor(.blue) }
-                        
+                    PJRPulseButton(color: .blue, systemImageName: "plus.circle.fill")
+                        .onTapGesture {
+                            self.showActionSheet = true
+                        }
                         .actionSheet(isPresented: $showActionSheet) {
                             ActionSheet(title: Text("Select Photo"), message: Text("Choose"), buttons: [
                                 .default(Text("Photo Library")) {
@@ -125,11 +124,7 @@ struct ContentView: View {
                         .sheet(isPresented: $showImagePicker) {
                             ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
                         }
-                        .onChange(of: image) { newImage in
-                            if let newImage = newImage {
-                                self.handlePickedImage(newImage)
-                            }
-                        }
+
                     Spacer()
                     
                     Button(action: { self.showShoppingList.toggle() }) {
