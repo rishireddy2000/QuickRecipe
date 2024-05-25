@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  MixnMatch
-//
-//  Created by Prudhvi Puli on 3/4/24.
-//
-
 import SwiftUI
 import UIKit
 
@@ -23,22 +16,38 @@ struct WardrobeItem: Identifiable, Equatable, Hashable, Codable {
 
 /// Enum representing the type of wardrobe item, such as top wear or bottom wear.
 enum WardrobeItemType: String, CaseIterable, Codable {
-    case topWear = "TopWear"
-    case bottomWear = "BottomWear"
+    case Perishables = "Perishables"
+    case Staples = "Staples"
+    case Sauces = "Sauces"
+    case Spices = "Spices"
+    case Snacks = "Snacks"
+    case Beverages = "Beverages"
 }
 
 /// Enum representing the subtype of wardrobe item, such as shirt, sweater, etc.
 enum WardrobeItemSubtype: String, CaseIterable, Codable {
-    case shirt = "Shirt", sweater = "Sweater", tshirt = "TShirt"
-    case jeans = "Jeans", shorts = "Shorts", trousers = "Trousers"
-    
+    case Produce = "Produce", Dairy = "Dairy", Proteins = "Proteins"
+    case Grains = "Grains", Baking = "Baking", Oils_and_Fats = "Oils and Fats"
+    case Sauce = "Sauces", Condiments = "Condiments"
+    case Spices = "Spices", Herbs = "Herbs", Flavorings = "Flavorings"
+    case Healthy = "Healthy", Unhealthy = "Unhealthy"
+    case Alcoholic = "Alocholic", Non_Alcoholic = "Non Alcoholic"
+
     /// Returns the subtypes corresponding to the given wardrobe item type.
     static func subtypes(for type: WardrobeItemType) -> [WardrobeItemSubtype] {
         switch type {
-        case .topWear:
-            return [.shirt, .sweater, .tshirt]
-        case .bottomWear:
-            return [.jeans, .shorts, .trousers]
+        case .Perishables:
+            return [.Produce, .Dairy, .Proteins]
+        case .Staples:
+            return [.Grains, .Baking, .Oils_and_Fats]
+        case .Sauces:
+            return [.Sauce, .Condiments]
+        case .Spices:
+            return [.Spices, .Herbs, .Flavorings]
+        case .Snacks:
+            return [.Healthy, .Unhealthy]
+        case .Beverages:
+            return [.Alcoholic, .Non_Alcoholic]
         }
     }
 }
@@ -46,8 +55,7 @@ enum WardrobeItemSubtype: String, CaseIterable, Codable {
 
 /// The main content view of the application
 struct ContentView: View {
-    @StateObject private var favoritesViewModel = FavoritesViewModel()
-    @State private var selectedType: WardrobeItemType = .topWear
+    @State private var selectedType: WardrobeItemType = .Perishables
     @State private var showActionSheet = false
     @State private var showImagePicker: Bool = false
     @State private var sourceType: UIImagePickerController.SourceType = .camera
@@ -67,7 +75,7 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 // Title of the wardrobe section
-                Text("Your Wardrobe").font(.largeTitle).foregroundColor(Color.white).padding()
+                Text("Your Kitchen").font(.largeTitle).foregroundColor(Color.white).padding()
                 
                     .onAppear(perform: {
                         // Show rate prompt after three launches
@@ -86,20 +94,20 @@ struct ContentView: View {
                     }
                 // Buttons for selecting wardrobe item type
                 HStack {
-                    Button("TopWear") { selectedType = .topWear }
-                        .padding().background(selectedType == .topWear ? Color.white.opacity(0.2) : Color.clear).cornerRadius(10).foregroundColor(.white)
+                    Button("Perishable") { selectedType = .Perishables }
+                        .padding().background(selectedType == .Perishables ? Color.white.opacity(0.2) : Color.clear).cornerRadius(10).foregroundColor(.white)
                     
-                    Button("BottomWear") { selectedType = .bottomWear }
-                        .padding().background(selectedType == .bottomWear ? Color.white.opacity(0.2) : Color.clear).cornerRadius(10).foregroundColor(.white)
+                    Button("Sauces") { selectedType = .Sauces }
+                        .padding().background(selectedType == .Sauces ? Color.white.opacity(0.2) : Color.clear).cornerRadius(10).foregroundColor(.white)
                 }.padding()
                 
                 // ScrollView for displaying wardrobe items
                 ScrollView {
                     VStack {
                         // Display top wear items
-                        if selectedType == .topWear {
-                            ForEach(WardrobeItemSubtype.subtypes(for: .topWear), id: \.self) { subtype in
-                                let itemsCount = wardrobeItems.filter { $0.type == .topWear && $0.subtype == subtype }.count
+                        if selectedType == .Perishables {
+                            ForEach(WardrobeItemSubtype.subtypes(for: .Perishables), id: \.self) { subtype in
+                                let itemsCount = wardrobeItems.filter { $0.type == .Perishables && $0.subtype == subtype }.count
                                 VStack(alignment: .leading) {
                                     Text("\(subtype.rawValue) (\(itemsCount))")
                                         .font(.headline)
@@ -108,7 +116,7 @@ struct ContentView: View {
                                     ScrollView(.horizontal, showsIndicators: false) {
                                         HStack(spacing: 10) { // Add spacing between items
                                             // Display items in reverse order so the most recently added are first
-                                            ForEach(wardrobeItems.filter { $0.type == .topWear && $0.subtype == subtype }.reversed(), id: \.id) { item in
+                                            ForEach(wardrobeItems.filter { $0.type == .Perishables && $0.subtype == subtype }.reversed(), id: \.id) { item in
                                                 VStack {
                                                     // Use loadImage(named:) to get UIImage
                                                     if let uiImage = loadImage(named: item.imageName) {
@@ -145,9 +153,9 @@ struct ContentView: View {
                         }
                         
                         // Display bottom wear items
-                        if selectedType == .bottomWear {
-                            ForEach(WardrobeItemSubtype.subtypes(for: .bottomWear), id: \.self) { subtype in
-                                let itemsCount = wardrobeItems.filter { $0.type == .bottomWear && $0.subtype == subtype }.count
+                        if selectedType == .Sauces {
+                            ForEach(WardrobeItemSubtype.subtypes(for: .Sauces), id: \.self) { subtype in
+                                let itemsCount = wardrobeItems.filter { $0.type == .Sauces && $0.subtype == subtype }.count
                                 VStack(alignment: .leading) {
                                     Text("\(subtype.rawValue) (\(itemsCount))")
                                         .font(.headline)
@@ -155,7 +163,7 @@ struct ContentView: View {
                                     
                                     ScrollView(.horizontal, showsIndicators: false) {
                                         HStack(spacing: 10) {
-                                            ForEach(wardrobeItems.filter { $0.type == .bottomWear && $0.subtype == subtype }.reversed(), id: \.id) { item in
+                                            ForEach(wardrobeItems.filter { $0.type == .Sauces && $0.subtype == subtype }.reversed(), id: \.id) { item in
                                                 VStack {
                                                     if let uiImage = loadImage(named: item.imageName) {
                                                         Image(uiImage: uiImage)
@@ -193,10 +201,6 @@ struct ContentView: View {
                 // Buttons for navigation and adding new items
                 HStack {
                     Spacer()
-                    NavigationLink(destination: FavoritesView(viewModel: favoritesViewModel)) { Image(systemName: "heart.fill") }
-                    
-                    Spacer()
-                    
                     Button(action: { self.showActionSheet = true }) { Image(systemName: "plus.circle.fill") }
                         .actionSheet(isPresented: $showActionSheet) {
                             ActionSheet(title: Text("Select Photo"), message: Text("Choose"), buttons: [
@@ -211,9 +215,6 @@ struct ContentView: View {
                                 .cancel()
                             ])
                         }
-                    //                            .sheet(isPresented: $showImagePicker, onDismiss: loadImage) {
-                    //                                ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
-                    //                            }
                         .sheet(isPresented: $showImagePicker) {
                             ImagePicker(image: self.$image, isShown: self.$showImagePicker, sourceType: self.sourceType)
                         }
@@ -222,11 +223,6 @@ struct ContentView: View {
                                 self.handlePickedImage(newImage)
                             }
                         }
-                    
-                    
-                    Spacer()
-                    
-                    NavigationLink(destination: PairUpView(viewModel: favoritesViewModel, wardrobeItems: $wardrobeItems)) { Image(systemName: "person.2.fill") }
                     Spacer()
                 }
                 
@@ -270,16 +266,6 @@ struct ContentView: View {
                     print("Initial Launch Date not found.")
                 }
             }
-            .background(
-                 GeometryReader { geometry in
-                     Image("DarkCloset")
-                         .resizable()
-                         .aspectRatio(contentMode: .fill)
-                         .frame(width: geometry.size.width, height: geometry.size.height)
-                         .opacity(0.5) // Adjust opacity as needed
-                         .edgesIgnoringSafeArea(.all) // Ignore safe area edges
-                 }
-             )
         }
         
     }
@@ -340,7 +326,7 @@ struct ContentView: View {
             selectedWardrobeItem?.imageName = imageName
         } else {
             // Create a new item for navigation purposes
-            let newItem = WardrobeItem(name: "New Item", imageName: imageName, type: selectedType, subtype: .shirt) // Adjust subtype as needed
+            let newItem = WardrobeItem(name: "New Item", imageName: imageName, type: selectedType, subtype: .Produce) // Adjust subtype as needed
             selectedWardrobeItem = newItem
         }
         // Ensure navigation to ImageDetailsView
@@ -402,7 +388,7 @@ struct ContentView: View {
         } else {
             // Adding a new item
             // Create a new WardrobeItem with the imageName
-            let newItem = WardrobeItem(name: "New Item", imageName: imageName, type: .topWear, subtype: .tshirt) // Modify as necessary
+            let newItem = WardrobeItem(name: "New Item", imageName: imageName, type: .Perishables, subtype: .Produce) // Modify as necessary
             wardrobeItems.append(newItem)
             selectedWardrobeItem = newItem // Update selectedWardrobeItem if needed
             isEditMode = false // Not in edit mode

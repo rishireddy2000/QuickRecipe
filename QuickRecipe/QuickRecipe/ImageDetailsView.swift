@@ -17,8 +17,8 @@ struct ImageDetailsView: View {
     @Environment(\.presentationMode) var presentationMode
 
     @State private var itemName: String = ""
-    @State private var itemType: WardrobeItemType = .topWear
-    @State private var itemSubtype: WardrobeItemSubtype = .shirt
+    @State private var itemType: WardrobeItemType = .Perishables
+    @State private var itemSubtype: WardrobeItemSubtype = .Produce
     @State private var image: UIImage?
     
     /// Initializes the view with editing parameters and optional save callback.
@@ -117,7 +117,7 @@ struct ImageDetailsView: View {
                }
         }
         .onChange(of: itemType) {
-            itemSubtype = WardrobeItemSubtype.subtypes(for: itemType).first ?? .shirt
+            itemSubtype = WardrobeItemSubtype.subtypes(for: itemType).first ?? .Produce
         }
         .onAppear {
             if let editingImageName = editingImageName {

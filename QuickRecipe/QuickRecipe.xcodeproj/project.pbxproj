@@ -10,10 +10,7 @@
 		60D059ED2BF5A58A00FA66C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D059EC2BF5A58A00FA66C9 /* Preview Assets.xcassets */; };
 		60D05A042BF5A5B400FA66C9 /* snap.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60D059F42BF5A5B300FA66C9 /* snap.gif */; };
 		60D05A052BF5A5B400FA66C9 /* splashscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059F52BF5A5B300FA66C9 /* splashscreen.swift */; };
-		60D05A062BF5A5B400FA66C9 /* PairUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059F62BF5A5B300FA66C9 /* PairUp.swift */; };
-		60D05A072BF5A5B400FA66C9 /* MixnMatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059F72BF5A5B300FA66C9 /* MixnMatchApp.swift */; };
-		60D05A082BF5A5B400FA66C9 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059F82BF5A5B300FA66C9 /* FavoritesViewModel.swift */; };
-		60D05A092BF5A5B400FA66C9 /* WardrobePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059F92BF5A5B300FA66C9 /* WardrobePair.swift */; };
+		60D05A072BF5A5B400FA66C9 /* QuickRecipeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059F72BF5A5B300FA66C9 /* QuickRecipeApp.swift */; };
 		60D05A0A2BF5A5B400FA66C9 /* favorites.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60D059FA2BF5A5B300FA66C9 /* favorites.gif */; };
 		60D05A0B2BF5A5B400FA66C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D059FB2BF5A5B400FA66C9 /* Assets.xcassets */; };
 		60D05A0C2BF5A5B400FA66C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059FC2BF5A5B400FA66C9 /* ContentView.swift */; };
@@ -21,7 +18,6 @@
 		60D05A0E2BF5A5B400FA66C9 /* pairup.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60D059FE2BF5A5B400FA66C9 /* pairup.gif */; };
 		60D05A0F2BF5A5B400FA66C9 /* ImageDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059FF2BF5A5B400FA66C9 /* ImageDetailsView.swift */; };
 		60D05A102BF5A5B400FA66C9 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D05A002BF5A5B400FA66C9 /* WeatherModel.swift */; };
-		60D05A112BF5A5B400FA66C9 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D05A012BF5A5B400FA66C9 /* FavoritesView.swift */; };
 		60D05A122BF5A5B400FA66C9 /* walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D05A022BF5A5B400FA66C9 /* walkthrough.swift */; };
 		60D05A132BF5A5B400FA66C9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D05A032BF5A5B400FA66C9 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
@@ -32,10 +28,7 @@
 		60D059F32BF5A5B200FA66C9 /* QuickRecipe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickRecipe-Bridging-Header.h"; sourceTree = "<group>"; };
 		60D059F42BF5A5B300FA66C9 /* snap.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = snap.gif; sourceTree = "<group>"; };
 		60D059F52BF5A5B300FA66C9 /* splashscreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splashscreen.swift; sourceTree = "<group>"; };
-		60D059F62BF5A5B300FA66C9 /* PairUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairUp.swift; sourceTree = "<group>"; };
-		60D059F72BF5A5B300FA66C9 /* MixnMatchApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MixnMatchApp.swift; sourceTree = "<group>"; };
-		60D059F82BF5A5B300FA66C9 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
-		60D059F92BF5A5B300FA66C9 /* WardrobePair.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WardrobePair.swift; sourceTree = "<group>"; };
+		60D059F72BF5A5B300FA66C9 /* QuickRecipeApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickRecipeApp.swift; sourceTree = "<group>"; };
 		60D059FA2BF5A5B300FA66C9 /* favorites.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = favorites.gif; sourceTree = "<group>"; };
 		60D059FB2BF5A5B400FA66C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60D059FC2BF5A5B400FA66C9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -43,7 +36,6 @@
 		60D059FE2BF5A5B400FA66C9 /* pairup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pairup.gif; sourceTree = "<group>"; };
 		60D059FF2BF5A5B400FA66C9 /* ImageDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailsView.swift; sourceTree = "<group>"; };
 		60D05A002BF5A5B400FA66C9 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
-		60D05A012BF5A5B400FA66C9 /* FavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		60D05A022BF5A5B400FA66C9 /* walkthrough.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = walkthrough.swift; sourceTree = "<group>"; };
 		60D05A032BF5A5B400FA66C9 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,17 +73,13 @@
 				60D059FB2BF5A5B400FA66C9 /* Assets.xcassets */,
 				60D059FC2BF5A5B400FA66C9 /* ContentView.swift */,
 				60D059FA2BF5A5B300FA66C9 /* favorites.gif */,
-				60D05A012BF5A5B400FA66C9 /* FavoritesView.swift */,
-				60D059F82BF5A5B300FA66C9 /* FavoritesViewModel.swift */,
 				60D059FF2BF5A5B400FA66C9 /* ImageDetailsView.swift */,
 				60D05A032BF5A5B400FA66C9 /* ImagePicker.swift */,
-				60D059F72BF5A5B300FA66C9 /* MixnMatchApp.swift */,
+				60D059F72BF5A5B300FA66C9 /* QuickRecipeApp.swift */,
 				60D059FE2BF5A5B400FA66C9 /* pairup.gif */,
-				60D059F62BF5A5B300FA66C9 /* PairUp.swift */,
 				60D059F42BF5A5B300FA66C9 /* snap.gif */,
 				60D059F52BF5A5B300FA66C9 /* splashscreen.swift */,
 				60D05A022BF5A5B400FA66C9 /* walkthrough.swift */,
-				60D059F92BF5A5B300FA66C9 /* WardrobePair.swift */,
 				60D059FD2BF5A5B400FA66C9 /* WeatherManager.swift */,
 				60D05A002BF5A5B400FA66C9 /* WeatherModel.swift */,
 				60D059EB2BF5A58A00FA66C9 /* Preview Content */,
@@ -182,18 +170,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60D05A112BF5A5B400FA66C9 /* FavoritesView.swift in Sources */,
-				60D05A072BF5A5B400FA66C9 /* MixnMatchApp.swift in Sources */,
-				60D05A062BF5A5B400FA66C9 /* PairUp.swift in Sources */,
+				60D05A072BF5A5B400FA66C9 /* QuickRecipeApp.swift in Sources */,
 				60D05A0C2BF5A5B400FA66C9 /* ContentView.swift in Sources */,
 				60D05A122BF5A5B400FA66C9 /* walkthrough.swift in Sources */,
 				60D05A0D2BF5A5B400FA66C9 /* WeatherManager.swift in Sources */,
 				60D05A102BF5A5B400FA66C9 /* WeatherModel.swift in Sources */,
-				60D05A082BF5A5B400FA66C9 /* FavoritesViewModel.swift in Sources */,
 				60D05A0F2BF5A5B400FA66C9 /* ImageDetailsView.swift in Sources */,
 				60D05A132BF5A5B400FA66C9 /* ImagePicker.swift in Sources */,
 				60D05A052BF5A5B400FA66C9 /* splashscreen.swift in Sources */,
-				60D05A092BF5A5B400FA66C9 /* WardrobePair.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

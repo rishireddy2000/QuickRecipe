@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct MixnMatchApp: App {
+struct QuickRecipe: App {
     var body: some Scene {
         WindowGroup {
             ShowSplashScreen()
