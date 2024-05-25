@@ -89,7 +89,17 @@ struct ContentView: View {
                 .navigationBarTitle("Your Kitchen")
                 HStack {
                     Spacer()
-                    Button(action: { self.showActionSheet = true }) { Image(systemName: "plus.circle.fill") }
+                    
+                    NavigationLink(destination: RecipeSearchView(ingredients: ["Apple","Sugar"])) { Image(systemName: "fork.knife.circle.fill ").resizable()
+                            .frame(width: 50, height: 50) // Adjusted size
+                            .foregroundColor(.blue) }
+                    
+                    Spacer()
+                    
+                    Button(action: { self.showActionSheet = true }) { Image(systemName: "plus.circle.fill").resizable()
+                            .frame(width: 50, height: 50) // Adjusted size
+                            .foregroundColor(.blue) }
+                        
                         .actionSheet(isPresented: $showActionSheet) {
                             ActionSheet(title: Text("Select Photo"), message: Text("Choose"), buttons: [
                                 .default(Text("Photo Library")) {
@@ -112,6 +122,13 @@ struct ContentView: View {
                             }
                         }
                     Spacer()
+                    
+                    NavigationLink(destination: ShoppingListView()) { Image(systemName: "bag.fill").resizable()
+                            .frame(width: 50, height: 50) // Adjusted size
+                            .foregroundColor(.blue) }
+                    
+                    Spacer()
+                    
                 }
                 NavigationLink(
                     destination: ImageDetailsView(
