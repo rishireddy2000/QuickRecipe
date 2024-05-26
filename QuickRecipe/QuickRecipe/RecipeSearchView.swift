@@ -130,6 +130,3 @@ struct RecipeSearchView: View {
 }
 
 
-#Preview {
-    RecipeSearchView(ingredients: ["Apple","Sugar"])
-}

@@ -10,6 +10,12 @@
 		600157232C02226200D02FFA /* shoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600157222C02226200D02FFA /* shoppingList.swift */; };
 		603118672C023BC30014DD00 /* RecipeSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603118662C023BC30014DD00 /* RecipeSearchView.swift */; };
 		6031188B2C02996D0014DD00 /* PJRPulseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6031188A2C02996D0014DD00 /* PJRPulseButton.swift */; };
+		603118CC2C02C17B0014DD00 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603118CB2C02C17B0014DD00 /* WidgetKit.framework */; };
+		603118CE2C02C17B0014DD00 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603118CD2C02C17B0014DD00 /* SwiftUI.framework */; };
+		603118D12C02C17B0014DD00 /* QuickRecipe_ShoppingListBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603118D02C02C17B0014DD00 /* QuickRecipe_ShoppingListBundle.swift */; };
+		603118D92C02C17D0014DD00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 603118D82C02C17D0014DD00 /* Assets.xcassets */; };
+		603118DD2C02C17D0014DD00 /* QuickRecipe_ShoppingListExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 603118C92C02C17B0014DD00 /* QuickRecipe_ShoppingListExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		603118E52C02C4460014DD00 /* shoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600157222C02226200D02FFA /* shoppingList.swift */; };
 		60D059ED2BF5A58A00FA66C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D059EC2BF5A58A00FA66C9 /* Preview Assets.xcassets */; };
 		60D05A042BF5A5B400FA66C9 /* snap.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60D059F42BF5A5B300FA66C9 /* snap.gif */; };
 		60D05A052BF5A5B400FA66C9 /* splashscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059F52BF5A5B300FA66C9 /* splashscreen.swift */; };
@@ -25,10 +31,42 @@
 		60D05A132BF5A5B400FA66C9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D05A032BF5A5B400FA66C9 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		603118DB2C02C17D0014DD00 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60D059DA2BF5A58700FA66C9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 603118C82C02C17B0014DD00;
+			remoteInfo = QuickRecipe_ShoppingListExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		603118DE2C02C17D0014DD00 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				603118DD2C02C17D0014DD00 /* QuickRecipe_ShoppingListExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		600157222C02226200D02FFA /* shoppingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shoppingList.swift; sourceTree = "<group>"; };
 		603118662C023BC30014DD00 /* RecipeSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchView.swift; sourceTree = "<group>"; };
 		6031188A2C02996D0014DD00 /* PJRPulseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PJRPulseButton.swift; sourceTree = "<group>"; };
+		603118C92C02C17B0014DD00 /* QuickRecipe_ShoppingListExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuickRecipe_ShoppingListExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		603118CB2C02C17B0014DD00 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		603118CD2C02C17B0014DD00 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		603118D02C02C17B0014DD00 /* QuickRecipe_ShoppingListBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickRecipe_ShoppingListBundle.swift; sourceTree = "<group>"; };
+		603118D82C02C17D0014DD00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		603118DA2C02C17D0014DD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		603118E22C02C1AA0014DD00 /* QuickRecipe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickRecipe.entitlements; sourceTree = "<group>"; };
+		603118E32C02C1B40014DD00 /* QuickRecipe_ShoppingListExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickRecipe_ShoppingListExtension.entitlements; sourceTree = "<group>"; };
 		60D059E22BF5A58700FA66C9 /* QuickRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D059EC2BF5A58A00FA66C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		60D059F32BF5A5B200FA66C9 /* QuickRecipe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickRecipe-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -47,6 +85,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		603118C62C02C17B0014DD00 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				603118CE2C02C17B0014DD00 /* SwiftUI.framework in Frameworks */,
+				603118CC2C02C17B0014DD00 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		60D059DF2BF5A58700FA66C9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,10 +104,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		603118CA2C02C17B0014DD00 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				603118CB2C02C17B0014DD00 /* WidgetKit.framework */,
+				603118CD2C02C17B0014DD00 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		603118CF2C02C17B0014DD00 /* QuickRecipe_ShoppingList */ = {
+			isa = PBXGroup;
+			children = (
+				603118D02C02C17B0014DD00 /* QuickRecipe_ShoppingListBundle.swift */,
+				603118D82C02C17D0014DD00 /* Assets.xcassets */,
+				603118DA2C02C17D0014DD00 /* Info.plist */,
+			);
+			path = QuickRecipe_ShoppingList;
+			sourceTree = "<group>";
+		};
 		60D059D92BF5A58700FA66C9 = {
 			isa = PBXGroup;
 			children = (
+				603118E32C02C1B40014DD00 /* QuickRecipe_ShoppingListExtension.entitlements */,
 				60D059E42BF5A58700FA66C9 /* QuickRecipe */,
+				603118CF2C02C17B0014DD00 /* QuickRecipe_ShoppingList */,
+				603118CA2C02C17B0014DD00 /* Frameworks */,
 				60D059E32BF5A58700FA66C9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				60D059E22BF5A58700FA66C9 /* QuickRecipe.app */,
+				603118C92C02C17B0014DD00 /* QuickRecipe_ShoppingListExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +146,7 @@
 		60D059E42BF5A58700FA66C9 /* QuickRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				603118E22C02C1AA0014DD00 /* QuickRecipe.entitlements */,
 				60D059FB2BF5A5B400FA66C9 /* Assets.xcassets */,
 				6031188A2C02996D0014DD00 /* PJRPulseButton.swift */,
 				60D059FC2BF5A5B400FA66C9 /* ContentView.swift */,
@@ -108,6 +179,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		603118C82C02C17B0014DD00 /* QuickRecipe_ShoppingListExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 603118E12C02C17D0014DD00 /* Build configuration list for PBXNativeTarget "QuickRecipe_ShoppingListExtension" */;
+			buildPhases = (
+				603118C52C02C17B0014DD00 /* Sources */,
+				603118C62C02C17B0014DD00 /* Frameworks */,
+				603118C72C02C17B0014DD00 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuickRecipe_ShoppingListExtension;
+			productName = QuickRecipe_ShoppingListExtension;
+			productReference = 603118C92C02C17B0014DD00 /* QuickRecipe_ShoppingListExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		60D059E12BF5A58700FA66C9 /* QuickRecipe */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60D059F02BF5A58A00FA66C9 /* Build configuration list for PBXNativeTarget "QuickRecipe" */;
@@ -115,10 +203,12 @@
 				60D059DE2BF5A58700FA66C9 /* Sources */,
 				60D059DF2BF5A58700FA66C9 /* Frameworks */,
 				60D059E02BF5A58700FA66C9 /* Resources */,
+				603118DE2C02C17D0014DD00 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				603118DC2C02C17D0014DD00 /* PBXTargetDependency */,
 			);
 			name = QuickRecipe;
 			productName = QuickRecipe;
@@ -135,6 +225,9 @@
 				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					603118C82C02C17B0014DD00 = {
+						CreatedOnToolsVersion = 15.2;
+					};
 					60D059E12BF5A58700FA66C9 = {
 						CreatedOnToolsVersion = 15.2;
 						LastSwiftMigration = 1520;
@@ -155,11 +248,20 @@
 			projectRoot = "";
 			targets = (
 				60D059E12BF5A58700FA66C9 /* QuickRecipe */,
+				603118C82C02C17B0014DD00 /* QuickRecipe_ShoppingListExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		603118C72C02C17B0014DD00 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				603118D92C02C17D0014DD00 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		60D059E02BF5A58700FA66C9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +277,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		603118C52C02C17B0014DD00 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				603118D12C02C17B0014DD00 /* QuickRecipe_ShoppingListBundle.swift in Sources */,
+				603118E52C02C4460014DD00 /* shoppingList.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		60D059DE2BF5A58700FA66C9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -195,7 +306,71 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		603118DC2C02C17D0014DD00 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 603118C82C02C17B0014DD00 /* QuickRecipe_ShoppingListExtension */;
+			targetProxy = 603118DB2C02C17D0014DD00 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		603118DF2C02C17D0014DD00 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = QuickRecipe_ShoppingListExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J27K8V339X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuickRecipe_ShoppingList/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QuickRecipe_ShoppingList;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rsr200.QuickRecipe.QuickRecipe-ShoppingList";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		603118E02C02C17D0014DD00 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = QuickRecipe_ShoppingListExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = J27K8V339X;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuickRecipe_ShoppingList/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QuickRecipe_ShoppingList;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.rsr200.QuickRecipe.QuickRecipe-ShoppingList";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		60D059EE2BF5A58A00FA66C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -318,9 +493,11 @@
 		60D059F12BF5A58A00FA66C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = QuickRecipe/QuickRecipe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QuickRecipe/Preview Content\"";
@@ -350,9 +527,11 @@
 		60D059F22BF5A58A00FA66C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = QuickRecipe/QuickRecipe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"QuickRecipe/Preview Content\"";
@@ -381,6 +560,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		603118E12C02C17D0014DD00 /* Build configuration list for PBXNativeTarget "QuickRecipe_ShoppingListExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				603118DF2C02C17D0014DD00 /* Debug */,
+				603118E02C02C17D0014DD00 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		60D059DD2BF5A58700FA66C9 /* Build configuration list for PBXProject "QuickRecipe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

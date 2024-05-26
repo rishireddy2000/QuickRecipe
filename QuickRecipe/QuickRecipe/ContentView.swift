@@ -160,11 +160,11 @@ struct ContentView: View {
         }
         .onAppear {
             self.foodItems = loadFoodItems()
-            if let storedDate = UserDefaults.standard.object(forKey: "InitialLaunch") as? Date {
+            if let storedDate = UserDefaults(suiteName: "group.com.rsr200.QuickRecipe")?.object(forKey: "InitialLaunch") as? Date {
                 self.initialLaunchDate = storedDate
             } else {
                 let currentDate = Date()
-                UserDefaults.standard.set(currentDate, forKey: "InitialLaunch")
+                UserDefaults(suiteName: "group.com.rsr200.QuickRecipe")?.set(currentDate, forKey: "InitialLaunch")
                 self.initialLaunchDate = currentDate
             }
             if let launchDate = self.initialLaunchDate {
@@ -246,12 +246,12 @@ struct ContentView: View {
     func saveFoodItems(_ items: [FoodItem]) {
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(items) {
-            UserDefaults.standard.set(encoded, forKey: "FoodItems")
+            UserDefaults(suiteName: "group.com.rsr200.QuickRecipe")?.set(encoded, forKey: "FoodItems")
         }
     }
     
     func loadFoodItems() -> [FoodItem] {
-        if let savedItems = UserDefaults.standard.object(forKey: "FoodItems") as? Data {
+        if let savedItems = UserDefaults(suiteName: "group.com.rsr200.QuickRecipe")?.object(forKey: "FoodItems") as? Data {
             let decoder = JSONDecoder()
             if let loadedItems = try? decoder.decode([FoodItem].self, from: savedItems) {
                 return loadedItems
@@ -286,10 +286,10 @@ struct ContentView: View {
     
     func updateLaunchCount() -> Int {
         let launchesKey = "numberOfLaunches"
-        var currentCount = UserDefaults.standard.integer(forKey: launchesKey)
-        currentCount += 1
-        UserDefaults.standard.set(currentCount, forKey: launchesKey)
-        return currentCount
+        var currentCount = UserDefaults(suiteName: "group.com.rsr200.QuickRecipe")?.integer(forKey: launchesKey)
+        currentCount! += 1
+        UserDefaults(suiteName: "group.com.rsr200.QuickRecipe")?.set(currentCount, forKey: launchesKey)
+        return currentCount!
     }
     
     private func openAppStoreForRating() {
@@ -330,8 +330,4 @@ struct ContentView: View {
         }
         navigateToItemDetailView = true
     }
-}
-
-#Preview {
-    ContentView()
 }

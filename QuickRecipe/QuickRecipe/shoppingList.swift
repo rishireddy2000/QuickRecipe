@@ -40,11 +40,12 @@ struct ShoppingListView: View {
     }
 
     func saveItems() {
-        UserDefaults.standard.set(items, forKey: "ShoppingListItems")
+        UserDefaults(suiteName: "group.com.rsr200.QuickRecipe")?.set(items, forKey: "ShoppingListItems")
+        UserDefaults(suiteName: "group.com.rsr200.QuickRecipe")?.synchronize()
     }
     
     func loadItems() {
-        if let savedItems = UserDefaults.standard.object(forKey: "ShoppingListItems") as? [String] {
+        if let savedItems = UserDefaults(suiteName: "group.com.rsr200.QuickRecipe")?.object(forKey: "ShoppingListItems") as? [String] {
             items = savedItems
         }
     }

@@ -101,10 +101,3 @@ struct PJRPulseButton: View {
     }
 
 }
-
-// MARK: - Preview
-struct PulseButton_Previews: PreviewProvider {
-    static var previews: some View {
-        PJRPulseButton()
-    }
-}
