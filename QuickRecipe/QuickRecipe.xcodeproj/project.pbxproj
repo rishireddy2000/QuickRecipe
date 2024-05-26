@@ -18,13 +18,10 @@
 		603118E52C02C4460014DD00 /* shoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600157222C02226200D02FFA /* shoppingList.swift */; };
 		609FED732C02FBF100FB518A /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609FED722C02FBF100FB518A /* RecipeDetailView.swift */; };
 		60D059ED2BF5A58A00FA66C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D059EC2BF5A58A00FA66C9 /* Preview Assets.xcassets */; };
-		60D05A042BF5A5B400FA66C9 /* snap.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60D059F42BF5A5B300FA66C9 /* snap.gif */; };
 		60D05A052BF5A5B400FA66C9 /* splashscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059F52BF5A5B300FA66C9 /* splashscreen.swift */; };
 		60D05A072BF5A5B400FA66C9 /* QuickRecipeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059F72BF5A5B300FA66C9 /* QuickRecipeApp.swift */; };
-		60D05A0A2BF5A5B400FA66C9 /* favorites.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60D059FA2BF5A5B300FA66C9 /* favorites.gif */; };
 		60D05A0B2BF5A5B400FA66C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D059FB2BF5A5B400FA66C9 /* Assets.xcassets */; };
 		60D05A0C2BF5A5B400FA66C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059FC2BF5A5B400FA66C9 /* ContentView.swift */; };
-		60D05A0E2BF5A5B400FA66C9 /* pairup.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60D059FE2BF5A5B400FA66C9 /* pairup.gif */; };
 		60D05A0F2BF5A5B400FA66C9 /* ImageDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059FF2BF5A5B400FA66C9 /* ImageDetailsView.swift */; };
 		60D05A122BF5A5B400FA66C9 /* walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D05A022BF5A5B400FA66C9 /* walkthrough.swift */; };
 		60D05A132BF5A5B400FA66C9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D05A032BF5A5B400FA66C9 /* ImagePicker.swift */; };
@@ -71,13 +68,10 @@
 		60D059E22BF5A58700FA66C9 /* QuickRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D059EC2BF5A58A00FA66C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		60D059F32BF5A5B200FA66C9 /* QuickRecipe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickRecipe-Bridging-Header.h"; sourceTree = "<group>"; };
-		60D059F42BF5A5B300FA66C9 /* snap.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = snap.gif; sourceTree = "<group>"; };
 		60D059F52BF5A5B300FA66C9 /* splashscreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = splashscreen.swift; sourceTree = "<group>"; };
 		60D059F72BF5A5B300FA66C9 /* QuickRecipeApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuickRecipeApp.swift; sourceTree = "<group>"; };
-		60D059FA2BF5A5B300FA66C9 /* favorites.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = favorites.gif; sourceTree = "<group>"; };
 		60D059FB2BF5A5B400FA66C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60D059FC2BF5A5B400FA66C9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		60D059FE2BF5A5B400FA66C9 /* pairup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pairup.gif; sourceTree = "<group>"; };
 		60D059FF2BF5A5B400FA66C9 /* ImageDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailsView.swift; sourceTree = "<group>"; };
 		60D05A022BF5A5B400FA66C9 /* walkthrough.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = walkthrough.swift; sourceTree = "<group>"; };
 		60D05A032BF5A5B400FA66C9 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
@@ -150,14 +144,11 @@
 				60D059FB2BF5A5B400FA66C9 /* Assets.xcassets */,
 				6031188A2C02996D0014DD00 /* PJRPulseButton.swift */,
 				60D059FC2BF5A5B400FA66C9 /* ContentView.swift */,
-				60D059FA2BF5A5B300FA66C9 /* favorites.gif */,
 				60D059FF2BF5A5B400FA66C9 /* ImageDetailsView.swift */,
 				60D05A032BF5A5B400FA66C9 /* ImagePicker.swift */,
 				60D059F72BF5A5B300FA66C9 /* QuickRecipeApp.swift */,
 				600157222C02226200D02FFA /* shoppingList.swift */,
 				603118662C023BC30014DD00 /* RecipeSearchView.swift */,
-				60D059FE2BF5A5B400FA66C9 /* pairup.gif */,
-				60D059F42BF5A5B300FA66C9 /* snap.gif */,
 				60D059F52BF5A5B300FA66C9 /* splashscreen.swift */,
 				60D05A022BF5A5B400FA66C9 /* walkthrough.swift */,
 				60D059EB2BF5A58A00FA66C9 /* Preview Content */,
@@ -265,9 +256,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60D05A0E2BF5A5B400FA66C9 /* pairup.gif in Resources */,
-				60D05A042BF5A5B400FA66C9 /* snap.gif in Resources */,
-				60D05A0A2BF5A5B400FA66C9 /* favorites.gif in Resources */,
 				60D05A0B2BF5A5B400FA66C9 /* Assets.xcassets in Resources */,
 				60D059ED2BF5A58A00FA66C9 /* Preview Assets.xcassets in Resources */,
 			);
@@ -503,13 +491,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuickRecipe/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QuickRecipe;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide outfits based on weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -517,11 +506,15 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsr200.QuickRecipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "QuickRecipe/QuickRecipe-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -540,13 +533,14 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuickRecipe/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = QuickRecipe;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.food-and-drink";
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera.";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide outfits based on weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -554,10 +548,14 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.rsr200.QuickRecipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "QuickRecipe/QuickRecipe-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
