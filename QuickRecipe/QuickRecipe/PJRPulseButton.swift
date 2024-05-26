@@ -29,17 +29,14 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  *
  */
-
 import SwiftUI
 
-// MARK: - Strucutre for Circle
 struct CircleData: Hashable {
     let width: CGFloat
     let opacity: Double
 }
 
 struct PJRPulseButton: View {
-    
     // MARK: - Properties
     @State private var isAnimating: Bool = false
     var color: Color
@@ -48,14 +45,15 @@ struct PJRPulseButton: View {
     var numberOfOuterCircles: Int
     var animationDuration: Double
     var circleArray = [CircleData]()
+    var action: () -> Void  // Adding an action closure
 
-
-    init(color: Color = Color.blue, systemImageName: String = "plus.circle.fill",  buttonWidth: CGFloat = 48, numberOfOuterCircles: Int = 2, animationDuration: Double  = 1) {
+    init(color: Color = Color.blue, systemImageName: String = "plus.circle.fill", buttonWidth: CGFloat = 48, numberOfOuterCircles: Int = 2, animationDuration: Double  = 1, action: @escaping () -> Void) {
         self.color = color
         self.systemImageName = systemImageName
         self.buttonWidth = buttonWidth
         self.numberOfOuterCircles = numberOfOuterCircles
         self.animationDuration = animationDuration
+        self.action = action  // Initialize the action
         
         var circleWidth = self.buttonWidth
         var opacity = (numberOfOuterCircles > 4) ? 0.40 : 0.20
@@ -67,24 +65,23 @@ struct PJRPulseButton: View {
         }
     }
 
-    // MARK: - Body
     var body: some View {
         ZStack {
             Group {
-                ForEach(circleArray, id: \.self) { cirlce in
+                ForEach(circleArray, id: \.self) { circle in
                     Circle()
-                            .fill(self.color)
-                        .opacity(self.isAnimating ? cirlce.opacity : 0)
-                        .frame(width: cirlce.width, height: cirlce.width, alignment: .center)
+                        .fill(self.color)
+                        .opacity(self.isAnimating ? circle.opacity : 0)
+                        .frame(width: circle.width, height: circle.width, alignment: .center)
                         .scaleEffect(self.isAnimating ? 1 : 0)
                 }
-                
             }
             .animation(Animation.easeInOut(duration: animationDuration).repeatForever(autoreverses: true),
-               value: self.isAnimating)
+                       value: self.isAnimating)
 
             Button(action: {
-                print("Button Pressed event")
+                self.action()  // Use the action here
+                self.isAnimating.toggle()  // Manage animation state
             }) {
                 Image(systemName: self.systemImageName)
                     .resizable()
@@ -92,12 +89,7 @@ struct PJRPulseButton: View {
                     .background(Circle().fill(Color.white))
                     .frame(width: self.buttonWidth, height: self.buttonWidth, alignment: .center)
                     .accentColor(color)
-                
             }
-            .onAppear(perform: {
-                self.isAnimating.toggle()
-            })
         } //: ZSTACK
     }
-
 }
