@@ -1,75 +1,52 @@
 import Foundation
 import SwiftUI
 
-// This class manages interactions with the UIImagePickerController, such as image selection and cancellation.
 class ImagePickerCoordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
 
-    @Binding var image: UIImage? // Represents the selected image, bound for external use.
-    @Binding var isShown: Bool // Controls the visibility of the UIImagePickerController, bound for external use.
+    @Binding var image: UIImage?
+    @Binding var isShown: Bool
 
-    /// Initializes the coordinator with bindings for the selected image and the picker's visibility.
-    /// - Parameters:
-    ///   - image: The selected image binding.
-    ///   - isShown: The visibility binding for the image picker.
     init(image: Binding<UIImage?>, isShown: Binding<Bool>) {
         _image = image
         _isShown = isShown
     }
 
-    /// Called when the user picks an image. Updates the bound image and hides the picker.
-    /// - Parameters:
-    ///   - picker: The UIImagePickerController instance.
-    ///   - info: The info dictionary containing details about the picked media.
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            // Log the selected image for debugging
             print("Image picked: \(uiImage)")
             image = uiImage
             isShown = false
         }
     }
 
-    /// Called when the user cancels the picker. Just hides the picker without updating the image.
-    /// - Parameter picker: The UIImagePickerController instance.
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        print("Image picker cancelled by user") // Log cancellation for debugging.
+        print("Image picker cancelled by user")
         isShown = false
     }
 }
 
 struct ImagePicker: UIViewControllerRepresentable {
-    // A SwiftUI wrapper for UIImagePickerController, enabling image selection in a SwiftUI view.
 
     typealias UIViewControllerType = UIImagePickerController
     typealias Coordinator = ImagePickerCoordinator
 
-    @Binding var image: UIImage? // Represents the selected image, to be used in the SwiftUI view.
-    @Binding var isShown: Bool // Controls the visibility of the UIImagePickerController in the SwiftUI view.
+    @Binding var image: UIImage?
+    @Binding var isShown: Bool
 
-    var sourceType: UIImagePickerController.SourceType = .camera // Defines the source of the image picker (camera, photo library, etc.)
+    var sourceType: UIImagePickerController.SourceType = .camera
 
-    /// Updates the UIImagePickerController. Currently, this method does nothing but is required by the protocol.
-    /// - Parameters:
-    ///   - uiViewController: The UIImagePickerController instance to be updated.
-    ///   - context: The context for the view controller representation.
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: UIViewControllerRepresentableContext<ImagePicker>) {
         // This method intentionally left blank.
     }
 
-    /// Creates the coordinator that handles UIImagePickerControllerDelegate methods.
-    /// - Returns: An instance of ImagePickerCoordinator.
     func makeCoordinator() -> ImagePicker.Coordinator {
         return ImagePickerCoordinator(image: $image, isShown: $isShown)
     }
-
-    /// Creates the UIImagePickerController and configures it with a source type and delegate.
-    /// - Parameter context: The context for the view controller representation.
-    /// - Returns: An instance of UIImagePickerController configured for image picking.
+    
     func makeUIViewController(context: UIViewControllerRepresentableContext<ImagePicker>) -> UIImagePickerController {
         let picker = UIImagePickerController()
         picker.sourceType = sourceType
-        // Log the source type for debugging
         print("Opening UIImagePickerController with sourceType: \(sourceType.rawValue)")
         picker.delegate = context.coordinator
         return picker
