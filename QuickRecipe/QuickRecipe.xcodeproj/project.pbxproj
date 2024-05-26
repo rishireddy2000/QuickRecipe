@@ -23,10 +23,8 @@
 		60D05A0A2BF5A5B400FA66C9 /* favorites.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60D059FA2BF5A5B300FA66C9 /* favorites.gif */; };
 		60D05A0B2BF5A5B400FA66C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D059FB2BF5A5B400FA66C9 /* Assets.xcassets */; };
 		60D05A0C2BF5A5B400FA66C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059FC2BF5A5B400FA66C9 /* ContentView.swift */; };
-		60D05A0D2BF5A5B400FA66C9 /* WeatherManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059FD2BF5A5B400FA66C9 /* WeatherManager.swift */; };
 		60D05A0E2BF5A5B400FA66C9 /* pairup.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60D059FE2BF5A5B400FA66C9 /* pairup.gif */; };
 		60D05A0F2BF5A5B400FA66C9 /* ImageDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059FF2BF5A5B400FA66C9 /* ImageDetailsView.swift */; };
-		60D05A102BF5A5B400FA66C9 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D05A002BF5A5B400FA66C9 /* WeatherModel.swift */; };
 		60D05A122BF5A5B400FA66C9 /* walkthrough.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D05A022BF5A5B400FA66C9 /* walkthrough.swift */; };
 		60D05A132BF5A5B400FA66C9 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D05A032BF5A5B400FA66C9 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
@@ -76,10 +74,8 @@
 		60D059FA2BF5A5B300FA66C9 /* favorites.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = favorites.gif; sourceTree = "<group>"; };
 		60D059FB2BF5A5B400FA66C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60D059FC2BF5A5B400FA66C9 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		60D059FD2BF5A5B400FA66C9 /* WeatherManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherManager.swift; sourceTree = "<group>"; };
 		60D059FE2BF5A5B400FA66C9 /* pairup.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = pairup.gif; sourceTree = "<group>"; };
 		60D059FF2BF5A5B400FA66C9 /* ImageDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDetailsView.swift; sourceTree = "<group>"; };
-		60D05A002BF5A5B400FA66C9 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		60D05A022BF5A5B400FA66C9 /* walkthrough.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = walkthrough.swift; sourceTree = "<group>"; };
 		60D05A032BF5A5B400FA66C9 /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,8 +156,6 @@
 				60D059F42BF5A5B300FA66C9 /* snap.gif */,
 				60D059F52BF5A5B300FA66C9 /* splashscreen.swift */,
 				60D05A022BF5A5B400FA66C9 /* walkthrough.swift */,
-				60D059FD2BF5A5B400FA66C9 /* WeatherManager.swift */,
-				60D05A002BF5A5B400FA66C9 /* WeatherModel.swift */,
 				60D059EB2BF5A58A00FA66C9 /* Preview Content */,
 				60D059F32BF5A5B200FA66C9 /* QuickRecipe-Bridging-Header.h */,
 			);
@@ -293,9 +287,7 @@
 				60D05A072BF5A5B400FA66C9 /* QuickRecipeApp.swift in Sources */,
 				60D05A0C2BF5A5B400FA66C9 /* ContentView.swift in Sources */,
 				60D05A122BF5A5B400FA66C9 /* walkthrough.swift in Sources */,
-				60D05A0D2BF5A5B400FA66C9 /* WeatherManager.swift in Sources */,
 				603118672C023BC30014DD00 /* RecipeSearchView.swift in Sources */,
-				60D05A102BF5A5B400FA66C9 /* WeatherModel.swift in Sources */,
 				60D05A0F2BF5A5B400FA66C9 /* ImageDetailsView.swift in Sources */,
 				60D05A132BF5A5B400FA66C9 /* ImagePicker.swift in Sources */,
 				600157232C02226200D02FFA /* shoppingList.swift in Sources */,

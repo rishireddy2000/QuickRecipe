@@ -22,20 +22,13 @@ struct MyWidgetProvider: TimelineProvider {
     }
 
     func getTimeline(in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
-        // Retrieve the latest data from UserDefaults
-            let data = UserDefaults(suiteName: "group.com.rsr200.QuickRecipe")?.stringArray(forKey: "ShoppingListItems") ?? ["Default Value"]
-            let currentDate = Date()
-            let nextRefreshDate = Calendar.current.date(byAdding: .second, value: 1, to: currentDate) ?? Date()
-            
-            // Update the names with the latest data
-            let names = data.map { $0.components(separatedBy: " ").first ?? "Unknown" }
-
-            // Create a timeline entry for the next refresh
-            let entry = SimpleEntry(date: currentDate, names: names)
-            let timeline = Timeline(entries: [entry], policy: .after(nextRefreshDate))
-            
-            // Call completion with the timeline
-            completion(timeline)
+        let data = UserDefaults(suiteName: "group.com.rsr200.QuickRecipe")?.stringArray(forKey: "ShoppingListItems") ?? ["Default Value"]
+        let currentDate = Date()
+        let nextRefreshDate = Calendar.current.date(byAdding: .second, value: 1, to: currentDate) ?? Date()
+        let names = data.map { $0.components(separatedBy: " ").first ?? "Unknown" }
+        let entry = SimpleEntry(date: currentDate, names: names)
+        let timeline = Timeline(entries: [entry], policy: .after(nextRefreshDate))
+        completion(timeline)
     }
 }
 
