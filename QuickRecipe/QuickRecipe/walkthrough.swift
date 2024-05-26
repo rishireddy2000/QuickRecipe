@@ -41,18 +41,18 @@ struct WalkthroughScreen: View {
         
         ZStack{
             if currentPage == 1{
-                ScreenView(image: "snap", title: "Snap & Organize", detail: "Photograph and categorize your clothes (shirts, T-shirts, sweaters, shorts, jeans, trousers) to create a digital wardrobe")
+                ScreenView(image: "add_item", title: "Snap & Organize", detail: "Photograph and categorize your food items to create a digital pantry")
                     .transition(.scale)
             }
             if currentPage == 2{
             
-                ScreenView(image: "pairup", title: "Visual Pairing Magic", detail: "Pair Up feature enables easy mixing and matching of items with a user-friendly interface, revealing new, visually appealing combinations.")
+                ScreenView(image: "shop", title: "Create Shopping Lists", detail: "Create and maintain shopping lists easily based on what food items you need")
                     .transition(.scale)
             }
             
             if currentPage == 3{
                 
-                ScreenView(image: "favorites", title: "Save Your Style", detail: "Save your perfect outfit combinations in Favorites, your personal lookbook for daily inspiration from previously loved looks")
+                ScreenView(image: "generateRecipe", title: "Generate Recipes", detail: "Reduce foodwaste by getting ideas on what to cook with the ingredients that are at home")
                     .transition(.scale)
             }
             
