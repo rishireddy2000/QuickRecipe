@@ -51,7 +51,7 @@ struct MyWidgetEntryView : View {
             Spacer()
         }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             .background(Color.black)
-            .foregroundColor(.white)
+            .foregroundColor(.white).containerBackground(.black, for: .widget)
     }
 }
 

@@ -67,6 +67,7 @@
 		603118E22C02C1AA0014DD00 /* QuickRecipe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickRecipe.entitlements; sourceTree = "<group>"; };
 		603118E32C02C1B40014DD00 /* QuickRecipe_ShoppingListExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickRecipe_ShoppingListExtension.entitlements; sourceTree = "<group>"; };
 		609FED722C02FBF100FB518A /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		609FED742C030B2600FB518A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		60D059E22BF5A58700FA66C9 /* QuickRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D059EC2BF5A58A00FA66C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		60D059F32BF5A5B200FA66C9 /* QuickRecipe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickRecipe-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -144,6 +145,7 @@
 		60D059E42BF5A58700FA66C9 /* QuickRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				609FED742C030B2600FB518A /* Info.plist */,
 				603118E22C02C1AA0014DD00 /* QuickRecipe.entitlements */,
 				60D059FB2BF5A5B400FA66C9 /* Assets.xcassets */,
 				6031188A2C02996D0014DD00 /* PJRPulseButton.swift */,
@@ -500,6 +502,9 @@
 				DEVELOPMENT_TEAM = J27K8V339X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuickRecipe/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide outfits based on weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -534,6 +539,9 @@
 				DEVELOPMENT_TEAM = J27K8V339X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuickRecipe/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app requires access to the camera.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "We need your location to provide outfits based on weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
