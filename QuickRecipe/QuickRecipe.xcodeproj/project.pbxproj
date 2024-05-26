@@ -16,6 +16,7 @@
 		603118D92C02C17D0014DD00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 603118D82C02C17D0014DD00 /* Assets.xcassets */; };
 		603118DD2C02C17D0014DD00 /* QuickRecipe_ShoppingListExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 603118C92C02C17B0014DD00 /* QuickRecipe_ShoppingListExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		603118E52C02C4460014DD00 /* shoppingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600157222C02226200D02FFA /* shoppingList.swift */; };
+		609FED732C02FBF100FB518A /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609FED722C02FBF100FB518A /* RecipeDetailView.swift */; };
 		60D059ED2BF5A58A00FA66C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D059EC2BF5A58A00FA66C9 /* Preview Assets.xcassets */; };
 		60D05A042BF5A5B400FA66C9 /* snap.gif in Resources */ = {isa = PBXBuildFile; fileRef = 60D059F42BF5A5B300FA66C9 /* snap.gif */; };
 		60D05A052BF5A5B400FA66C9 /* splashscreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D059F52BF5A5B300FA66C9 /* splashscreen.swift */; };
@@ -65,6 +66,7 @@
 		603118DA2C02C17D0014DD00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		603118E22C02C1AA0014DD00 /* QuickRecipe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickRecipe.entitlements; sourceTree = "<group>"; };
 		603118E32C02C1B40014DD00 /* QuickRecipe_ShoppingListExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickRecipe_ShoppingListExtension.entitlements; sourceTree = "<group>"; };
+		609FED722C02FBF100FB518A /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		60D059E22BF5A58700FA66C9 /* QuickRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D059EC2BF5A58A00FA66C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		60D059F32BF5A5B200FA66C9 /* QuickRecipe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuickRecipe-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				60D05A022BF5A5B400FA66C9 /* walkthrough.swift */,
 				60D059EB2BF5A58A00FA66C9 /* Preview Content */,
 				60D059F32BF5A5B200FA66C9 /* QuickRecipe-Bridging-Header.h */,
+				609FED722C02FBF100FB518A /* RecipeDetailView.swift */,
 			);
 			path = QuickRecipe;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60D05A072BF5A5B400FA66C9 /* QuickRecipeApp.swift in Sources */,
+				609FED732C02FBF100FB518A /* RecipeDetailView.swift in Sources */,
 				60D05A0C2BF5A5B400FA66C9 /* ContentView.swift in Sources */,
 				60D05A122BF5A5B400FA66C9 /* walkthrough.swift in Sources */,
 				603118672C023BC30014DD00 /* RecipeSearchView.swift in Sources */,

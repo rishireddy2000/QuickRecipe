@@ -18,6 +18,7 @@ struct Recipe: Codable, Identifiable {
 struct RecipeDetail: Codable {
     var sourceUrl: String
     var instructions: String
+    var spoonacularSourceUrl : String
 }
 
 struct Ingredient: Codable {
@@ -32,24 +33,15 @@ struct RecipeRow: View {
     var recipe: Recipe
     @State private var showDetails = false
 
+
     var body: some View {
-        VStack(alignment: .leading) {
-            HStack {
-                Text(recipe.title)
-                Spacer()
-                Button(action: { showDetails.toggle() }) {
-                    Image(systemName: "chevron.down.circle")
-                }
-            }
-            if showDetails {
-                if let missedIngredients = recipe.missedIngredients {
-                    Text("Missing Ingredients: \(missedIngredients.map { $0.name }.joined(separator: ", "))")
-                } else {
-                    Text("Missing Ingredients: None")
+        NavigationLink(destination: RecipeDetailView(recipeId: recipe.id)) {
+                HStack {
+                    Text(recipe.title)
+                    Spacer()
                 }
             }
         }
-    }
 }
 
 
@@ -59,23 +51,26 @@ struct RecipeSearchView: View {
     var ingredients: [String]  // This should be passed from the main view
 
     var body: some View {
-        VStack {
-            if isFetching {
-                ProgressView("Fetching Recipes...")
-            } else {
-                List(recipes, id: \.id) { recipe in
-                    RecipeRow(recipe: recipe)
+            NavigationView {
+                VStack {
+                    if isFetching {
+                        ProgressView("Fetching Recipes...")
+                    } else {
+                        List(recipes, id: \.id) { recipe in
+                            RecipeRow(recipe: recipe)
+                        }
+                    }
+                    Button("Find Recipes") {
+                        fetchRecipes()
+                    }
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
                 }
+                .navigationTitle("Recipes")
             }
-            Button("Find Recipes") {
-                fetchRecipes()
-            }
-            .padding()
-            .background(Color.blue)
-            .foregroundColor(.white)
-            .cornerRadius(10)
         }
-    }
 
     func fetchRecipes() {
         let ingredientQuery = ingredients.joined(separator: ",")
@@ -107,7 +102,7 @@ struct RecipeSearchView: View {
                 }
                 do {
                     let decodedResponse = try decoder.decode([Recipe].self, from: data)
-                    recipes = decodedResponse
+                    recipes = decodedResponse.sorted { $0.missedIngredientCount ?? 0 < $1.missedIngredientCount ?? 0 }
                     print("Recipes loaded successfully!")
                 } catch let DecodingError.dataCorrupted(context) {
                     print(context)
